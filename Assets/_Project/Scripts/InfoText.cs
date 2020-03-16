@@ -12,7 +12,8 @@ public class InfoText : MonoBehaviour {
 		"Set Depth of arm of Sofa",
         "Set Height of Back of Sofa",
         "Change Seat Quantity",
-        "Change Back Quantity"
+        "Change Back Quantity",
+        "Reselect Fabric"
 
 	};
 

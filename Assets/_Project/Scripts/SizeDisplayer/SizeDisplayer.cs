@@ -11,7 +11,7 @@ public class SizeDisplayer : MonoBehaviour {
     protected float length = 66f;
 
     protected float LengthSizeOffset = 12f;
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         modifySofa.onUpScale += OnUpScale;
         modifySofa.onDownScale += OnDownScale;
@@ -39,7 +39,7 @@ public class SizeDisplayer : MonoBehaviour {
         text.text = length.ToString("0.0") + "\"";
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         modifySofa.onUpScale -= OnUpScale;
         modifySofa.onDownScale -= OnDownScale;

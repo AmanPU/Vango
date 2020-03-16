@@ -13,12 +13,10 @@ public class ModifySofa : MonoBehaviour
     public GameObject _leftArm;
     public GameObject _rightArm;
 
-    public GameObject _leftBack;
-    public GameObject _rightBack;
+    public GameObject[] _backs;
+    public GameObject[] _seats;
 
-    public GameObject _leftSeat;
-    public GameObject _rightSeat;
-
+    
     public GameObject[] sizeDisplayer;
 
 

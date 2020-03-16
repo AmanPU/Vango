@@ -27,28 +27,35 @@ public class ModifyDepth : ModifySofa
     protected override void OnPlusButtonClicked()
     {
         base.OnPlusButtonClicked();
-        _leftBack.transform.localPosition += _backPositionModifierVector;
-        _rightBack.transform.localPosition += _backPositionModifierVector;
+        for (int i = 0; i < _backs.Length; i++)
+        {
+            _backs[i].transform.localPosition += _backPositionModifierVector;
+        }
+        
 
-        _leftSeat.transform.localPosition += _backPositionModifierVector;
-        _rightSeat.transform.localPosition += _backPositionModifierVector;
+        for (int i = 0; i < _seats.Length; i++)
+        {
+            _seats[i].transform.localPosition += _backPositionModifierVector;
+            _seats[i].transform.localScale += _scaleModifierVector * DEPTH_OFFSET;
+        }
 
-        _leftSeat.transform.localScale += _scaleModifierVector * DEPTH_OFFSET;
-        _rightSeat.transform.localScale += _scaleModifierVector * DEPTH_OFFSET;
-
+        
     }
 
     protected override void OnMinusButtonClicked()
     {
         base.OnMinusButtonClicked();
-        _leftBack.transform.localPosition -= _backPositionModifierVector;
-        _rightBack.transform.localPosition -= _backPositionModifierVector;
+        for (int i = 0; i < _backs.Length; i++)
+        {
+            _backs[i].transform.localPosition -= _backPositionModifierVector;
+        }
 
-        _leftSeat.transform.localPosition -= _backPositionModifierVector;
-        _rightSeat.transform.localPosition -= _backPositionModifierVector;
 
-        _leftSeat.transform.localScale -= _scaleModifierVector * DEPTH_OFFSET;
-        _rightSeat.transform.localScale -= _scaleModifierVector * DEPTH_OFFSET;
+        for (int i = 0; i < _seats.Length; i++)
+        {
+            _seats[i].transform.localPosition -= _backPositionModifierVector;
+            _seats[i].transform.localScale -= _scaleModifierVector * DEPTH_OFFSET;
+        }
     }
 
     protected override void OnDisable()

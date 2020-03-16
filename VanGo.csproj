@@ -253,8 +253,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Project\Scripts\BackSelector.cs" />
+    <Compile Include="Assets\_Project\Scripts\BackSelectorUI.cs" />
     <Compile Include="Assets\_Project\Scripts\Controllers\Vango.cs" />
     <Compile Include="Assets\_Project\Scripts\Enums\TaskType.cs" />
+    <Compile Include="Assets\_Project\Scripts\FabricSelectorUI.cs" />
+    <Compile Include="Assets\_Project\Scripts\FabricType.cs" />
     <Compile Include="Assets\_Project\Scripts\InfoText.cs" />
     <Compile Include="Assets\_Project\Scripts\ModifySofa\ModifyArmDepth.cs" />
     <Compile Include="Assets\_Project\Scripts\ModifySofa\ModifyArmWidth.cs" />
@@ -266,6 +270,7 @@
     <Compile Include="Assets\_Project\Scripts\RotateForDepth.cs" />
     <Compile Include="Assets\_Project\Scripts\RotateForLength.cs" />
     <Compile Include="Assets\_Project\Scripts\Scroll.cs" />
+    <Compile Include="Assets\_Project\Scripts\SeatSelector.cs" />
     <Compile Include="Assets\_Project\Scripts\SeatSelectorUI.cs" />
     <Compile Include="Assets\_Project\Scripts\SeatType.cs" />
     <Compile Include="Assets\_Project\Scripts\SizeDisplayer\ArmDepthSizeDisplayer.cs" />
@@ -275,6 +280,7 @@
     <Compile Include="Assets\_Project\Scripts\SizeDisplayer\LengthSizeDisplayer.cs" />
     <Compile Include="Assets\_Project\Scripts\SizeDisplayer\SizeDisplayer.cs" />
     <Compile Include="Assets\_Project\Scripts\VibrateSofa.cs" />
+    <Compile Include="Assets\FabricSelector.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -308,7 +314,6 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
-    <Compile Include="Assets\SeatSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />

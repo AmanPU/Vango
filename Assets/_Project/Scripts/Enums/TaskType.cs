@@ -7,10 +7,9 @@ public enum TaskType
     ArmDepth,
     BackHeight,
     ChangeSeatsQuantity,
+    ChangeBackQuantity,
     Fabric,
-    BackFabric,
     ArmFabric,
-    Backs,
     Legs
 }
 

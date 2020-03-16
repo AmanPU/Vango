@@ -15,7 +15,7 @@ public partial class Vango : MonoBehaviour
 
     public GameObject sofa;
 
-    const int MAX_TASKS = 6;
+    const int MAX_TASKS = 8;
 
     // Use this for initialization
     void Start()
@@ -67,6 +67,8 @@ public partial class Vango : MonoBehaviour
         sofa.GetComponent<ModifyDepth>().enabled = false;
         sofa.GetComponent<ModifyBackHeight>().enabled = false;
         sofa.GetComponent<SeatSelector>().enabled = false;
+        sofa.GetComponent<BackSelector>().enabled = false;
+        sofa.GetComponent<FabricSelector>().enabled = false;
     }
 
     private void SetTask(int currentTask)
@@ -102,11 +104,30 @@ public partial class Vango : MonoBehaviour
                     StartChangeSeatQuantityTask();
                     break;
                 }
+            case TaskType.ChangeBackQuantity: {
+                    StartBackQuantityTask();
+                    break;
+                }
+            case TaskType.Fabric: {
+                    StartFabricTask();
+                    break;
+            }
+
 
             default:
                 break;
 
         }
+    }
+
+    private void StartFabricTask()
+    {
+        sofa.GetComponent<FabricSelector>().enabled = true;
+    }
+
+    private void StartBackQuantityTask()
+    {
+        sofa.GetComponent<BackSelector>().enabled = true;
     }
 
     private void StartChangeSeatQuantityTask()

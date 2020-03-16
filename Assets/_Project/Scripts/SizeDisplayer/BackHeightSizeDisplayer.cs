@@ -11,6 +11,19 @@ public class BackHeightSizeDisplayer : SizeDisplayer {
     
 	}
 
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        PlayerPrefs.SetFloat("LENGTH", length);
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        length = PlayerPrefs.GetFloat("LENGTH", length);
+        text.text = length.ToString("0.0") + "\"";
+    }
+
 
     protected override void OnDownScale(Vector3 size)
     {

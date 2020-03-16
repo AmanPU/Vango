@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class SeatSelectorUI : MonoBehaviour {
 
-    public Action<SeatType> onSeatSelected; 
+    public Action<SeatAndBackType> onSeatSelected; 
 
     public void OnSeatSelectorClicked(int seatType) {
-        onSeatSelected((SeatType)seatType);
+        onSeatSelected((SeatAndBackType)seatType);
     }
 
 }

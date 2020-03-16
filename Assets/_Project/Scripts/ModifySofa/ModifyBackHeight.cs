@@ -19,6 +19,7 @@ public class ModifyBackHeight : ModifySofa {
     protected override void OnDisable()
     {
         base.OnDisable();
+        
         GetComponent<RotateForLength>().enabled = false;
     }
     

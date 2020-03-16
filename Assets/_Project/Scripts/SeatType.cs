@@ -1,5 +1,5 @@
 ﻿
-public enum SeatType
+public enum SeatAndBackType
 {
     OneSeat,
     TwoSeats,
