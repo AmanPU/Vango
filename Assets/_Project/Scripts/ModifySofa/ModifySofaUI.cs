@@ -8,9 +8,6 @@ public class ModifySofaUI : MonoBehaviour {
 	public Action onPlusButtonClicked;
 	public Action onMinusButtonClicked;
 
-
-	
-
 	public void OnPlusButtonClicked() {
 		onPlusButtonClicked();
     }

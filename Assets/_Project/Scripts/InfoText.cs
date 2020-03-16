@@ -10,6 +10,9 @@ public class InfoText : MonoBehaviour {
 		"Set Depth of Sofa",
 		"Set Width of arm of Sofa",
 		"Set Depth of arm of Sofa",
+        "Set Height of Back of Sofa",
+        "Change Seat Quantity",
+        "Change Back Quantity"
 
 	};
 

@@ -15,7 +15,7 @@ public partial class Vango : MonoBehaviour
 
     public GameObject sofa;
 
-    const int MAX_TASKS = 4;
+    const int MAX_TASKS = 6;
 
     // Use this for initialization
     void Start()
@@ -65,6 +65,8 @@ public partial class Vango : MonoBehaviour
         sofa.GetComponent<ModifyArmDepth>().enabled = false;
         sofa.GetComponent<ModifyLength>().enabled = false;
         sofa.GetComponent<ModifyDepth>().enabled = false;
+        sofa.GetComponent<ModifyBackHeight>().enabled = false;
+        sofa.GetComponent<SeatSelector>().enabled = false;
     }
 
     private void SetTask(int currentTask)
@@ -92,11 +94,29 @@ public partial class Vango : MonoBehaviour
                     StartArmDepthTask();
                     break;
                 }
+            case TaskType.BackHeight: {
+                    StartBackHeightTask();
+                    break;
+                }
+            case TaskType.ChangeSeatsQuantity: {
+                    StartChangeSeatQuantityTask();
+                    break;
+                }
 
             default:
                 break;
 
         }
+    }
+
+    private void StartChangeSeatQuantityTask()
+    {
+        sofa.GetComponent<SeatSelector>().enabled = true;
+    }
+
+    private void StartBackHeightTask()
+    {
+        sofa.GetComponent<ModifyBackHeight>().enabled = true;
     }
 
     private void StartArmDepthTask()

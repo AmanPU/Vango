@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class ModifySofa : MonoBehaviour
     public GameObject _leftSeat;
     public GameObject _rightSeat;
 
+    public GameObject[] sizeDisplayer;
 
 
     protected const float SCALE_MODIFIER = 0.0001f;
@@ -26,11 +28,28 @@ public class ModifySofa : MonoBehaviour
     protected Vector3 _scaleModifierVector;
     protected Vector3 _positionModifierVector;
 
+
+    public Action<Vector3> onUpScale;
+    public Action<Vector3> onDownScale;
+
+
+    protected virtual void OnEnable()
+    {
+        for (int i = 0; i < sizeDisplayer.Length; i++)
+        {
+            sizeDisplayer[i].SetActive(true);
+        }
+
+        UI.GetComponent<ModifySofaUI>().onMinusButtonClicked += OnMinusButtonClicked;
+        UI.GetComponent<ModifySofaUI>().onPlusButtonClicked += OnPlusButtonClicked;
+        UI.SetActive(true);
+    }
+
     protected virtual void Start()
     {
        
 
-        UI.SetActive(true);
+        
 
         
 
@@ -43,6 +62,10 @@ public class ModifySofa : MonoBehaviour
             _gameObjectsToModifyAlong[i].transform.localScale += _scaleModifierVector;
         }
 
+        onUpScale(_scaleModifierVector);
+
+
+
         
     }
 
@@ -53,6 +76,20 @@ public class ModifySofa : MonoBehaviour
             _gameObjectsToModifyAlong[i].transform.localScale -= _scaleModifierVector;
         }
 
+        onDownScale(_scaleModifierVector);
+
        
+    }
+
+    protected virtual void OnDisable()
+    {
+        for (int i = 0; i < sizeDisplayer.Length; i++)
+        {
+            sizeDisplayer[i].SetActive(false);
+        }
+
+        UI.GetComponent<ModifySofaUI>().onMinusButtonClicked -= OnMinusButtonClicked;
+        UI.GetComponent<ModifySofaUI>().onPlusButtonClicked -= OnPlusButtonClicked;
+        UI.SetActive(false);
     }
 }

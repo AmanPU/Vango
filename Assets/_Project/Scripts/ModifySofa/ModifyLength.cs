@@ -4,35 +4,23 @@ using UnityEngine;
 
 public class ModifyLength : ModifySofa
 {
-
-
-
-
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         GetComponent<RotateForLength>().enabled = true;
-
-        UI.GetComponent<ModifySofaUI>().onMinusButtonClicked += OnMinusButtonClicked;
-        UI.GetComponent<ModifySofaUI>().onPlusButtonClicked += OnPlusButtonClicked;
     }
 
     protected override void Start()
     {
 
         base.Start();
-
-        
-
         _scaleModifierVector = Vector3.right * SCALE_MODIFIER;
         _positionModifierVector = Vector3.right * POSITION_MODIFIER;
     }
 
-
-
     protected override void OnPlusButtonClicked()
     {
         base.OnPlusButtonClicked();
-
         _leftArm.transform.localPosition -= _positionModifierVector;
         _rightArm.transform.localPosition += _positionModifierVector;
     }
@@ -40,15 +28,13 @@ public class ModifyLength : ModifySofa
     protected override void OnMinusButtonClicked()
     {
         base.OnMinusButtonClicked();
-
         _leftArm.transform.localPosition += _positionModifierVector;
         _rightArm.transform.localPosition -= _positionModifierVector;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         GetComponent<RotateForLength>().enabled = false;
-        UI.GetComponent<ModifySofaUI>().onMinusButtonClicked -= OnMinusButtonClicked;
-        UI.GetComponent<ModifySofaUI>().onPlusButtonClicked -= OnPlusButtonClicked;
     }
 }
