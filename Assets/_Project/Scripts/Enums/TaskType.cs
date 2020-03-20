@@ -9,7 +9,10 @@ public enum TaskType
     ChangeSeatsQuantity,
     ChangeBackQuantity,
     Fabric,
-    ArmFabric,
-    Legs
+    PillowQuantity,
+    PillowFabricSelector,
+    LegSelector,
+    LegStainSelector,
+    TaskCompleted
 }
 

@@ -267,6 +267,7 @@
     <Compile Include="Assets\_Project\Scripts\ModifySofa\ModifyLength.cs" />
     <Compile Include="Assets\_Project\Scripts\ModifySofa\ModifySofa.cs" />
     <Compile Include="Assets\_Project\Scripts\ModifySofa\ModifySofaUI.cs" />
+    <Compile Include="Assets\_Project\Scripts\PillowSelector.cs" />
     <Compile Include="Assets\_Project\Scripts\RotateForDepth.cs" />
     <Compile Include="Assets\_Project\Scripts\RotateForLength.cs" />
     <Compile Include="Assets\_Project\Scripts\Scroll.cs" />
@@ -314,6 +315,10 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
+    <Compile Include="Assets\LegSelector.cs" />
+    <Compile Include="Assets\LegStainSelector.cs" />
+    <Compile Include="Assets\PillowFabricSelector.cs" />
+    <Compile Include="Assets\RotateSofa.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />

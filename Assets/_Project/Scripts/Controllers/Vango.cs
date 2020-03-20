@@ -15,7 +15,7 @@ public partial class Vango : MonoBehaviour
 
     public GameObject sofa;
 
-    const int MAX_TASKS = 8;
+    const int MAX_TASKS = 13;
 
     // Use this for initialization
     void Start()
@@ -69,6 +69,11 @@ public partial class Vango : MonoBehaviour
         sofa.GetComponent<SeatSelector>().enabled = false;
         sofa.GetComponent<BackSelector>().enabled = false;
         sofa.GetComponent<FabricSelector>().enabled = false;
+        sofa.GetComponent<PillowSelector>().enabled = false;
+        sofa.GetComponent<PillowFabricSelector>().enabled = false;
+        sofa.GetComponent<LegSelector>().enabled = false;
+        sofa.GetComponent<LegStainSelector>().enabled = false;
+        sofa.GetComponent<RotateSofa>().enabled = false;
     }
 
     private void SetTask(int currentTask)
@@ -112,12 +117,57 @@ public partial class Vango : MonoBehaviour
                     StartFabricTask();
                     break;
             }
+            case TaskType.PillowQuantity:
+                {
+                    StartPillowSelectorTask();
+                    break;
+                }
 
-
+            case TaskType.PillowFabricSelector: {
+                    StartPillowFabricTask();
+                    break;
+                }
+            case TaskType.LegSelector: {
+                    StartLegSelectorTask();
+                    break;
+                }
+            case TaskType.LegStainSelector: {
+                    StartLegStainSelector();
+                    break;
+                }
+            case TaskType.TaskCompleted: {
+                    StartTaskCompleted();
+                    break;
+                }
             default:
                 break;
 
         }
+    }
+
+    private void StartTaskCompleted()
+    {
+        sofa.GetComponent<RotateSofa>().enabled = true;
+    }
+
+    private void StartLegStainSelector()
+    {
+        sofa.GetComponent<LegStainSelector>().enabled = true;
+    }
+
+    private void StartLegSelectorTask()
+    {
+        sofa.GetComponent<LegSelector>().enabled = true;
+    }
+
+    private void StartPillowFabricTask()
+    {
+        sofa.GetComponent<PillowFabricSelector>().enabled = true;
+    }
+
+    private void StartPillowSelectorTask()
+    {
+        sofa.GetComponent<PillowSelector>().enabled = true;
     }
 
     private void StartFabricTask()

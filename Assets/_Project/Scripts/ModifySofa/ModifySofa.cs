@@ -30,6 +30,10 @@ public class ModifySofa : MonoBehaviour
     public Action<Vector3> onUpScale;
     public Action<Vector3> onDownScale;
 
+    protected int minLimit, maxLimit;
+    protected int modifications;
+
+    public Vango vango;
 
     protected virtual void OnEnable()
     {
@@ -45,12 +49,8 @@ public class ModifySofa : MonoBehaviour
 
     protected virtual void Start()
     {
-       
-
-        
-
-        
-
+        minLimit = maxLimit = 10;
+        modifications = 0;
     }
 
     protected virtual void OnPlusButtonClicked()
@@ -63,7 +63,7 @@ public class ModifySofa : MonoBehaviour
         onUpScale(_scaleModifierVector);
 
 
-
+        
         
     }
 
@@ -76,6 +76,7 @@ public class ModifySofa : MonoBehaviour
 
         onDownScale(_scaleModifierVector);
 
+        
        
     }
 
@@ -89,5 +90,16 @@ public class ModifySofa : MonoBehaviour
         UI.GetComponent<ModifySofaUI>().onMinusButtonClicked -= OnMinusButtonClicked;
         UI.GetComponent<ModifySofaUI>().onPlusButtonClicked -= OnPlusButtonClicked;
         UI.SetActive(false);
+    }
+
+    protected virtual bool IsModificationAllowed() {
+        if (modifications < maxLimit && modifications > minLimit)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 }

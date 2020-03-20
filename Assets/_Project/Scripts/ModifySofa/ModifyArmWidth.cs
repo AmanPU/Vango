@@ -18,20 +18,39 @@ public class ModifyArmWidth : ModifySofa {
         base.Start();    
         _scaleModifierVector = Vector3.right * SCALE_MODIFIER * ARM_OFFSET;
         _positionModifierVector = Vector3.right * POSITION_MODIFIER * ARM_OFFSET;
+
+        minLimit = -10;
+        maxLimit = 30;
     }
 
     protected override void OnPlusButtonClicked()
     {
-        base.OnPlusButtonClicked();
-        _leftArm.transform.localPosition += _positionModifierVector;
-        _rightArm.transform.localPosition -= _positionModifierVector;
+        modifications++;
+        if (IsModificationAllowed())
+        {
+            base.OnPlusButtonClicked();
+            _leftArm.transform.localPosition += _positionModifierVector;
+            _rightArm.transform.localPosition -= _positionModifierVector;
+        }
+        else {
+            modifications--;
+            vango.invalidTaskInvoked();
+        }
     }
 
     protected override void OnMinusButtonClicked()
     {
-        base.OnMinusButtonClicked();
-        _leftArm.transform.localPosition -= _positionModifierVector;
-        _rightArm.transform.localPosition += _positionModifierVector;
+        modifications--;
+        if (IsModificationAllowed())
+        {
+            base.OnMinusButtonClicked();
+            _leftArm.transform.localPosition -= _positionModifierVector;
+            _rightArm.transform.localPosition += _positionModifierVector;
+        }
+        else {
+            modifications++;
+            vango.invalidTaskInvoked();
+        }
     }
 
     protected override void OnDisable()

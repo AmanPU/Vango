@@ -13,7 +13,13 @@ public class InfoText : MonoBehaviour {
         "Set Height of Back of Sofa",
         "Change Seat Quantity",
         "Change Back Quantity",
-        "Reselect Fabric"
+        "Reselect Fabric",
+        "Select Pillows Quantity",
+        "Reselect Pillow Fabric",
+        "Reselect Legs",
+        "Change Leg Stain",
+        "Great! Your Sofa is Complete"
+        
 
 	};
 
