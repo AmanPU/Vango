@@ -25,8 +25,8 @@ public class ModifyLength : ModifySofa
         _scaleModifierVector = Vector3.right * SCALE_MODIFIER;
         _positionModifierVector = Vector3.right * POSITION_MODIFIER;
 
-        minLimit = -10;
-        maxLimit = 10;
+        minLimit = -20;
+        maxLimit = 50;
     }
 
     protected override void OnPlusButtonClicked()
