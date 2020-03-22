@@ -1,0 +1,64 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="BackSelectorUI">
+			<method name="OnBackSelectorClicked"/>
+			<method name="OnBackSelectorClicked"/>
+			<method name="OnBackSelectorClicked"/>
+		</type>
+		<type fullname="SeatSelectorUI">
+			<method name="OnSeatSelectorClicked"/>
+			<method name="OnSeatSelectorClicked"/>
+			<method name="OnSeatSelectorClicked"/>
+		</type>
+		<type fullname="FabricSelectorUI">
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+			<method name="OnFabricSelectorClicked"/>
+		</type>
+		<type fullname="Vango">
+			<method name="OnNextButtonClicked"/>
+			<method name="OnPreviousButtonClicked"/>
+		</type>
+		<type fullname="ModifySofaUI">
+			<method name="OnPlusButtonClicked"/>
+			<method name="OnMinusButtonClicked"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine" ignoreIfMissing="1">
+		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+		</type>
+		<type fullname="UnityEngine.Material">
+			<method name="CopyPropertiesFromMaterial"/>
+			<method name="CopyPropertiesFromMaterial"/>
+			<method name="CopyPropertiesFromMaterial"/>
+			<method name="CopyPropertiesFromMaterial"/>
+			<method name="CopyPropertiesFromMaterial"/>
+		</type>
+	</assembly>
+</linker>
