@@ -12,7 +12,7 @@ public class FabricSelector : MonoBehaviour
 
 
 
-    public Material fabricMaterial;
+    public Material[] fabricMaterial;
     public Material pillowMaterial;
 
     protected virtual void OnEnable()
@@ -25,10 +25,13 @@ public class FabricSelector : MonoBehaviour
 
 
 
-    protected virtual void OnFabricSelected(Texture texture) 
+    protected virtual void OnFabricSelected(Texture texture)
     {
-        fabricMaterial.SetTexture("_MainTex",texture);
-        pillowMaterial.SetTexture("_MainTex",texture);
+        for (int i = 0; i < fabricMaterial.Length; i++)
+        {
+            fabricMaterial[i].SetTexture("_MainTex", texture);
+        }
+        pillowMaterial.SetTexture("_MainTex", texture);
     }
 
 

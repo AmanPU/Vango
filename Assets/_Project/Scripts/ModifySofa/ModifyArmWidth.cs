@@ -7,6 +7,11 @@ public class ModifyArmWidth : ModifySofa {
 
 
     const float ARM_OFFSET = 1.5f;
+
+    public GameObject backbase;
+    float baseOffset = 0.15f;
+
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -18,6 +23,8 @@ public class ModifyArmWidth : ModifySofa {
         base.Start();    
         _scaleModifierVector = Vector3.right * SCALE_MODIFIER * ARM_OFFSET;
         _positionModifierVector = Vector3.right * POSITION_MODIFIER * ARM_OFFSET;
+
+
 
         minLimit = -10;
         maxLimit = 30;
@@ -31,6 +38,8 @@ public class ModifyArmWidth : ModifySofa {
             base.OnPlusButtonClicked();
             _leftArm.transform.localPosition += _positionModifierVector;
             _rightArm.transform.localPosition -= _positionModifierVector;
+
+            backbase.transform.localScale += Vector3.right * SCALE_MODIFIER * ARM_OFFSET * baseOffset;
         }
         else {
             modifications--;
@@ -46,6 +55,8 @@ public class ModifyArmWidth : ModifySofa {
             base.OnMinusButtonClicked();
             _leftArm.transform.localPosition -= _positionModifierVector;
             _rightArm.transform.localPosition += _positionModifierVector;
+
+            backbase.transform.localScale -= Vector3.right * SCALE_MODIFIER * ARM_OFFSET * baseOffset;
         }
         else {
             modifications++;

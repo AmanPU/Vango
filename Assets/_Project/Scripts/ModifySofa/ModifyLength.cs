@@ -9,6 +9,9 @@ public class ModifyLength : ModifySofa
     public GameObject _rightPillow;
 
 
+    public GameObject sofabase;
+    float baseOffset = 0.875f;
+
     public GameObject[] leftLegs;
 
     public GameObject[] rightLegs;
@@ -37,6 +40,8 @@ public class ModifyLength : ModifySofa
             base.OnPlusButtonClicked();
 
 
+            sofabase.transform.localScale += _scaleModifierVector * baseOffset;
+
             for (int i = 0; i < leftLegs.Length; i++)
             {
                 leftLegs[i].transform.localPosition -= _positionModifierVector;
@@ -46,10 +51,13 @@ public class ModifyLength : ModifySofa
             _leftPillow.transform.localPosition -= _positionModifierVector;
             _rightArm.transform.localPosition += _positionModifierVector;
             _rightPillow.transform.localPosition += _positionModifierVector;
+
+
         }
-        else {
+        else
+        {
             modifications--;
-            vango.invalidTaskInvoked();    
+            vango.invalidTaskInvoked();
         }
     }
 
@@ -59,6 +67,9 @@ public class ModifyLength : ModifySofa
         if (IsModificationAllowed())
         {
             base.OnMinusButtonClicked();
+
+            sofabase.transform.localScale -= _scaleModifierVector * baseOffset;
+
             for (int i = 0; i < leftLegs.Length; i++)
             {
                 leftLegs[i].transform.localPosition += _positionModifierVector;
@@ -71,14 +82,15 @@ public class ModifyLength : ModifySofa
             _rightArm.transform.localPosition -= _positionModifierVector;
             _rightPillow.transform.localPosition -= _positionModifierVector;
         }
-        else {
+        else
+        {
             modifications++;
             vango.invalidTaskInvoked();
         }
     }
 
 
-    
+
 
     protected override void OnDisable()
     {
